@@ -11,9 +11,10 @@ const CardMain = () =>{
         seguidores: number;
     }
 
-    const BuscaUsuario = async () =>{
+    const BuscaGithub = async () =>{
         try{
             var busca: any = await axios.get(`https://api.github.com/users/wellyngton-souza`);
+            console.log(busca);
             return busca.data;
         } catch (error){
             console.log(error);
@@ -23,7 +24,7 @@ const CardMain = () =>{
 
     useEffect(() =>{
         const mostrarBusca = async () =>{
-            const resposta = await BuscaUsuario();
+            const resposta = await BuscaGithub();
             setUsuario({
                 img: resposta.avatar_url,
                 nome: resposta.login,
@@ -35,10 +36,10 @@ const CardMain = () =>{
 
     return(
         <CardStyle>
-            <h2>Fetch Github</h2>
-            <p>{usuario?.img}</p>
+            <h2>Desenvolvedor</h2>
+            <p><img src={usuario?.img} alt="wellyngton"></img></p>
             <p>{usuario?.nome}</p>
-            <p>{usuario?.seguidores}</p>
+            <p>Followers {usuario?.seguidores}</p>
         </CardStyle>
     );
 }
