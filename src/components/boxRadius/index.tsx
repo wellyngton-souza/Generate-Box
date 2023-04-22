@@ -1,10 +1,14 @@
 import { BoxRad } from "./style";
 
-const BoxRadius = () =>{
+interface Props {
+  totalBorda: number[];
+}
+
+const BoxRadius = (props: Props) => {
   return (
     <>
-        <BoxRad>
-            <h2>Minha Box</h2>
+        <BoxRad borderRadius={props.totalBorda}>
+            <h2>Border-Radius: {props.totalBorda[0]}% {props.totalBorda[1]}% {props.totalBorda[2]}% {props.totalBorda[3]}%;</h2>
         </BoxRad>
     </>
   );

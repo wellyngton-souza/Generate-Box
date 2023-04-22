@@ -39,7 +39,7 @@ const CardMain = () =>{
             <h2>Desenvolvedor</h2>
             <p><img src={usuario?.img} alt="wellyngton"></img></p>
             <p>{usuario?.nome}</p>
-            <p>Followers {usuario?.seguidores}</p>
+            <p>{usuario?.seguidores}</p>
         </CardStyle>
     );
 }
