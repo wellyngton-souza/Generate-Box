@@ -4,8 +4,8 @@ import Painel from "./components/Painel";
 const App = () =>{
   return (
     <>
-      <Painel />
       <CardMain />
+      <Painel />
     </>
   );
 }
